@@ -1,8 +1,18 @@
 Lab 1 — Threat Model + First Secure Prompts (Gemini + Gandalf/RedArena)
 =======================================================
-> Author : Badr TAJINI - LLM Cybersecurity - ECE 2025/2026
+> Author : Seynabou SOUGOU, Maxime XU - LLM Cybersecurity - ECE 2025/2026
 
-This starter fits **VS Code** locally. Colab is optional.
+Ce README decrit ce que nous avons realise et ou trouver les preuves.
+
+## Ce que nous avons fait
+- Capture du baseline avant/apres durcissement des invites.
+- Observation d'attaques via Gandalf et RedArena, puis prise de notes.
+- Redaction du modele de menace et synthese des risques.
+
+## Artefacts
+- `reports/baseline_before.json`, `reports/baseline_after.json`
+- `reports/gandalf_notes.md`, `reports/redarena_notes.md`
+- Dossier `reports/screenshots/` pour les captures utiles
 
 ## 0) Prereqs
 - **Python 3.11+** (3.11-3.13 supported)

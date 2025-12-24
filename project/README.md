@@ -1,6 +1,6 @@
-Final Project — Secure RAG **or** Safe Agent
+Final Project – Secure RAG **or** Safe Agent
 =======================================================
-> Author : Badr TAJINI - LLM Cybersecurity - ECE 2025/2026
+> Author : Seynabou SOUGOU, Maxime XU - LLM Cybersecurity - ECE 2025/2026
 
 Pick **both** tracks and deliver a minimal, defendable system with metrics and CI gates.
 
@@ -15,6 +15,15 @@ Pick **both** tracks and deliver a minimal, defendable system with metrics and C
 - **Guardrails**: input and output guards, plus JSON schema validation.
 - **Eval loop**: `promptfoo` tests for both correctness and safety. Produce `reports/*.html, *.json, metrics.csv`.
 - **CI gate**: GitHub Actions runs promptfoo + metrics and fails if thresholds are not met.
+
+## Ce que nous avons fait
+- Mise en place du pipeline d'execution, guardrails et schema JSON.
+- Lancement des evaluations et generation des rapports.
+- Redaction du rapport final en francais.
+
+## Artefacts
+- `reports/report.html`, `reports/results_custom.json`, `reports/metrics.csv`
+- `reports/FINAL_PROJECT_REPORT_FR.md`, `reports/FINAL_PROJECT_REPORT.md`
 
 ## Quick start
 ```bash

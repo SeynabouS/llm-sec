@@ -1,8 +1,18 @@
 Lab 3 — Config & IaC Security with Checkov + Semgrep (+ Gemini for remediation)
 =======================================================
-> Author : Badr TAJINI - LLM Cybersecurity - ECE 2025/2026
+> Author : Seynabou SOUGOU, Maxime XU - LLM Cybersecurity - ECE 2025/2026
 
-**Goal.** Scan Terraform, Kubernetes manifests, and Dockerfile for misconfigurations. Then use Gemini to propose **structured remediation suggestions**, apply fixes, and re‑scan to demonstrate measurable improvement.
+**Goal.** Scan Terraform, Kubernetes manifests, and Dockerfile for misconfigurations. Then use Gemini to propose **structured remediation suggestions**, apply fixes, and re-scan to demonstrate measurable improvement.
+
+## Ce que nous avons fait
+- Scans Checkov et Semgrep sur l'etat initial.
+- Corrections sur les fichiers IaC puis re-scan pour verifier l'amelioration.
+- Synthese des changements et reflexion sur les risques.
+
+## Artefacts
+- `reports/checkov.json`, `reports/semgrep.json`
+- `reports/checkov_after.json`, `reports/semgrep_after.json`
+- `reports/summary.md`, `reports/reflection.md`
 
 ## Deliverables
 - `reports/checkov.json`, `reports/semgrep.json`, and `reports/summary.md`

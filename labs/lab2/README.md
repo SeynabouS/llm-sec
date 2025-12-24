@@ -1,8 +1,17 @@
 Lab 2 — Secure Code Review Prompts + Eval (Promptfoo + Gemini)
 =======================================================
-> Author : Badr TAJINI - LLM Cybersecurity - ECE 2025/2026
+> Author : Seynabou SOUGOU, Maxime XU - LLM Cybersecurity - ECE 2025/2026
 
-**Goal.** Compare a naïve vs a secure-review prompt on 30 seeded code snippets. Produce JSON-only outputs and compute Precision/Recall/F1.
+**Goal.** Compare a naive vs a secure-review prompt on 30 seeded code snippets. Produce JSON-only outputs and compute Precision/Recall/F1.
+
+## Ce que nous avons fait
+- Execution de promptfoo avec deux prompts (baseline vs secure).
+- Generation du rapport HTML et des sorties JSON.
+- Calcul des metriques (precision/recall/F1) et redaction du brief.
+
+## Artefacts
+- `reports/lab2_report.html`, `reports/lab2_results.json`, `reports/metrics.csv`
+- `reports/brief.md` et `reports/brief_fr.md`
 
 ## Quick start
 1) **Prereqs**: Node.js 22+ LTS, Python 3.11+ (3.11-3.13 supported), a Gemini API key (free via Google AI Studio).
