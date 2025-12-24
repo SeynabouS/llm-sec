@@ -31,7 +31,7 @@ python -m src.app                 # runs a baseline over data/prompts_lab1.json
 
 ## 2) What you will do
 1. Obtain a Gemini key, confirm a first call.
-2. Play **Gandalf** and **RedArena** to observe jailbreak patterns.
+2. Play **Gandalf** to observe jailbreak patterns.
 3. Map observed tactics to **OWASP LLM Top-10** and **MITRE ATLAS**.
 4. Run the baseline pipeline: input → filter → Gemini → **JSON schema** → report.
 5. Submit: 2‑page threat model PDF + repo with your notes and baseline results.
