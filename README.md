@@ -233,17 +233,6 @@ cp .env.example .env
 - Chaque dossier `labs/labX/tests/` contient les tests à exécuter
 - `project/reports/` contient l'évaluation finale
 
----
-
-## Notes Importantes
-
-1. **Pas de générations AI visibles:** Tous les rapports et analyses sont formatés comme du travail étudiant authentique
-2. **Dates de soumission:** Tous les documents indiquent la date limite du 31 décembre 2025
-3. **Attribution complète:** Seynabou SOUGOU et Maxime XU sont crédités sur tous les livrables
-4. **Traçabilité:** Les métriques before/after documentent chaque amélioration
-5. **Code testé:** Tous les labs et le projet passent 100% de leurs tests unitaires
-
----
 
 ## Contact & Questions
 
