@@ -1,0 +1,38 @@
+$schema: https://promptfoo.dev/config-schema.json
+description: 'Lab 2 eval: naïve vs secure-review prompt on seeded snippets (OpenRouter)'
+
+providers:
+  - id: openrouter:mistralai/devstral-2512:free
+    config:
+      apiKey: "{{ env.OPENROUTER_API_KEY }}"
+
+prompts:
+  - file://prompts/baseline_prompt.txt
+  - file://prompts/secure_review_chat.json
+
+defaultTest:
+  assert:
+    - type: is-json
+    - type: javascript
+      metric: accuracy
+      value: |
+        const expected = '{{ label }}';
+        const obj = typeof output === 'string' ? JSON.parse(output) : output;
+        let actual = obj.is_vuln;
+        
+        if (actual === undefined && typeof obj.is_vulnerable === 'boolean') {
+          actual = obj.is_vulnerable ? 'yes' : 'no';
+        } else if (actual === undefined && typeof obj.is_vulnerable === 'string') {
+          const v = obj.is_vulnerable.toLowerCase();
+          if (v.includes('yes') || v.includes('true')) actual = 'yes';
+          if (v.includes('no')  || v.includes('false')) actual = 'no';
+        }
+        
+        return actual === expected ? 1 : 0;
+
+tests: file://_generated/tests_flat.yaml
+
+evaluateOptions:
+  maxConcurrency: 5   # OpenRouter has better limits than Google
+  delay: 500          # 500ms = fast but safe
+  timeoutSeconds: 90

@@ -1,0 +1,234 @@
+================================================================================
+     LLM CYBERSECURITY COURSE — EXECUTIVE SUMMARY FOR COLLEAGUES
+================================================================================
+
+Author: Prof. Badr TAJINI
+Program: LLM Cybersecurity — ECE 2025/2026
+Purpose: Training the next generation of AI Security Engineers
+
+--------------------------------------------------------------------------------
+                          THE PROBLEM WE'RE SOLVING
+--------------------------------------------------------------------------------
+
+Every major organization is deploying Large Language Models (ChatGPT, Gemini,
+Claude, etc.) but almost nobody knows how to secure them.
+
+Traditional security engineers don't understand AI model behavior.
+AI/ML engineers don't understand security attack patterns.
+This creates a critical talent gap.
+
+Our course trains students who understand BOTH.
+
+--------------------------------------------------------------------------------
+                            COURSE AT A GLANCE
+--------------------------------------------------------------------------------
+
+DURATION:        16 hours in-class + ~20 hours personal work
+FORMAT:          8h lectures + 8h hands-on labs
+ASSESSMENT:      50% continuous (4 labs) + 50% final project
+INFRASTRUCTURE:  Zero cost (uses free-tier APIs and tools)
+
+--------------------------------------------------------------------------------
+                          THE 8 THEORETICAL MODULES
+--------------------------------------------------------------------------------
+
+Module 1: Introduction — AI & LLM in Cybersecurity (1h)
+         - Why LLMs matter for security
+         - Opportunities vs hype
+         - Ethical considerations
+
+Module 2: LLM Fundamentals for Security Engineers (1h)
+         - How prompting works
+         - Strengths: natural language, code understanding
+         - Weaknesses: hallucinations, injection attacks
+
+Module 3: Prompt Engineering for Vulnerability Detection (1.5h)
+         - Writing effective security prompts
+         - Zero-shot vs few-shot approaches
+         - Output formatting (JSON, CWE tags)
+
+Module 4: LLM for Source Code Analysis (1.5h)
+         - Finding SQLi, XSS, deserialization bugs
+         - Comparison with traditional SAST tools
+         - False positive/negative management
+
+Module 5: LLM for Configuration & IaC Security (1h)
+         - Reviewing SSH, Nginx, cloud policies
+         - Terraform/CloudFormation security
+         - Integration with Checkov, Semgrep
+
+Module 6: Beyond Code — Other Applications (0.5h)
+         - Threat intelligence summarization
+         - Pentest finding interpretation
+         - Network log analysis
+
+Module 7: Evaluating Results & Human-in-the-Loop (1h)
+         - Verification techniques
+         - Managing false positives/negatives
+         - When to trust vs verify
+
+Module 8: Limitations, Risks & Future Trends (0.5h)
+         - Prompt injection attacks
+         - Data confidentiality concerns
+         - What's coming next
+
+--------------------------------------------------------------------------------
+                          THE 4 PRACTICAL LABS
+--------------------------------------------------------------------------------
+
+LAB 1: Threat Modeling & Secure Prompting (12.5%)
+       - Attack an LLM using jailbreak techniques
+       - Document vulnerabilities with OWASP/ATLAS frameworks
+       - Build a threat model for an LLM application
+       DELIVERS: Threat model PDF, baseline comparisons
+
+LAB 2: Secure Code Review Prompts (12.5%)
+       - Create prompts that find real vulnerabilities
+       - Measure precision/recall using promptfoo
+       - Reduce false positives through iteration
+       DELIVERS: Evaluation metrics, analysis brief
+
+LAB 3: Config & IaC Security (12.5%)
+       - Run Checkov + Semgrep on vulnerable infrastructure
+       - Use LLM to triage and prioritize findings
+       - Fix issues and prove improvements
+       DELIVERS: Before/after scan reports, fix evidence
+
+LAB 4: Guardrails & Red Team (12.5%)
+       - Build input/output filters for an LLM
+       - Run automated attack suite
+       - Measure block rates before and after
+       DELIVERS: Attack results, metrics CSV, policy files
+
+--------------------------------------------------------------------------------
+                            FINAL PROJECT (50%)
+--------------------------------------------------------------------------------
+
+Students choose one track:
+
+TRACK A: Secure RAG (Retrieval-Augmented Generation)
+         - Build a Q&A system that cites sources
+         - Prevent hallucinations through guardrails
+         - Pass automated safety evaluation
+
+TRACK B: Safe Agent
+         - Build an LLM that can use tools
+         - Limit actions to an allow-list
+         - Log and audit every decision
+
+Both tracks require:
+- Working application with guardrails
+- Evaluation metrics meeting thresholds
+- 3-5 page security analysis report
+
+--------------------------------------------------------------------------------
+                      7 COMPETENCIES STUDENTS ACQUIRE
+--------------------------------------------------------------------------------
+
+1. EXPLAIN capabilities and limitations of LLMs for security tasks
+2. FORMULATE clear, specific prompts for security queries
+3. USE LLMs to identify code vulnerabilities (Python, JS, Java)
+4. USE LLMs to find configuration errors (SSH, Nginx, Cloud)
+5. CRITICALLY ANALYZE LLM security suggestions
+6. UNDERSTAND data confidentiality risks with LLMs
+7. WRITE security reports with human critical analysis
+
+--------------------------------------------------------------------------------
+                         TOOLS AND TECHNOLOGIES
+--------------------------------------------------------------------------------
+
+- promptfoo: Automated LLM evaluation framework
+- Checkov: Infrastructure-as-Code security scanner
+- Semgrep: Static application security testing
+- Gemini API: Google's LLM (free tier for students)
+- GitHub Actions: CI/CD for automated testing
+- OWASP LLM Top-10: Risk classification framework
+- MITRE ATLAS: Adversarial AI threat taxonomy
+
+--------------------------------------------------------------------------------
+                          ZERO-COST INFRASTRUCTURE
+--------------------------------------------------------------------------------
+
+Everything runs on free tiers:
+- Gemini API: Free for students
+- GitHub Codespaces: 60 hours/month free
+- GitHub Actions: Free for education
+- Ollama: Local inference (free)
+- PortSwigger Academy: Free attack labs
+
+Students need only a laptop and internet connection.
+
+--------------------------------------------------------------------------------
+                         WHY THIS MATTERS NOW
+--------------------------------------------------------------------------------
+
+1. TALENT SHORTAGE: Companies deploying LLMs have nobody who can secure them
+
+2. PORTFOLIO VALUE: Students graduate with production-ready artifacts that
+   prove their skills in interviews
+
+3. FIRST-MOVER ADVANTAGE: Very few universities offer structured LLM security
+   training — graduates stand out immediately
+
+4. CAREER ACCELERATION: Skills that typically require 6-12 months of on-job
+   training are acquired in ~28 hours of coursework
+
+--------------------------------------------------------------------------------
+                          CAREER PATHWAYS
+--------------------------------------------------------------------------------
+
+Roles students are prepared for:
+
+- LLM Security Engineer (Google, Microsoft, OpenAI)
+- AI Red Team Specialist (Security consultancies)
+- DevSecOps Engineer with AI/ML focus
+- Product Security Engineer for GenAI products
+- Trust & Safety Engineer (Anthropic, scale-ups)
+
+Salary premium: 25-40% above traditional security roles
+
+--------------------------------------------------------------------------------
+                       ACADEMIC FOUNDATION
+--------------------------------------------------------------------------------
+
+Curriculum based on peer-reviewed research:
+
+- Pearce et al. (2022) — Security of GitHub Copilot
+- Noever (2023) — LLMs finding/fixing vulnerabilities
+- Fu et al. (2023) — GPT-4 cybersecurity capabilities
+- Fischer et al. (2024) — LLMs for vulnerability detection
+
+Plus industry standards:
+- OWASP Top 10 for LLM Applications
+- MITRE ATLAS adversarial AI framework
+- NVIDIA NeMo Guardrails patterns
+
+--------------------------------------------------------------------------------
+                          SUMMARY
+--------------------------------------------------------------------------------
+
+This course produces graduates who can:
+
+✓ Identify security risks in LLM applications
+✓ Build defensive guardrails that measurably work
+✓ Evaluate LLM security with reproducible metrics
+✓ Write professional security assessments
+✓ Integrate LLMs into existing security workflows
+
+In 28 hours, students gain skills that are in critical demand and almost
+impossible to find in the current job market.
+
+--------------------------------------------------------------------------------
+                         CONTACT & RESOURCES
+--------------------------------------------------------------------------------
+
+Author: Prof. Badr TAJINI
+Course: LLM Cybersecurity — ECE 2025/2026
+Repository: https://github.com/btajini/llm-course
+
+For questions about curriculum adoption, industry partnerships, or research
+collaboration, please contact the program lead.
+
+================================================================================
+                    Prepared December 2025 | ECE Paris
+================================================================================

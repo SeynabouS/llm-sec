@@ -1,0 +1,31 @@
+name: lab4-tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - "labs/lab4/**"
+      - ".github/workflows/lab4-tests.yml"
+  pull_request:
+    paths:
+      - "labs/lab4/**"
+      - ".github/workflows/lab4-tests.yml"
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run unit tests
+        run: |
+          PYTHONPATH=labs/lab4 python -m unittest discover -s labs/lab4/tests

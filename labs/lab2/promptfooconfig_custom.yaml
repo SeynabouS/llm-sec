@@ -1,0 +1,25 @@
+$schema: https://promptfoo.dev/config-schema.json
+description: 'Lab 2 eval: naïve vs secure-review prompt on seeded snippets (Custom Provider)'
+
+providers:
+  - id: python:custom_provider.py
+    config:
+      pythonExecutable: python3
+
+prompts:
+  - file://prompts/baseline_prompt.txt
+  - file://prompts/secure_review_prompt.txt
+
+defaultTest:
+  assert:
+    - type: is-json
+    - type: javascript
+      metric: accuracy
+      value: '(() => { try { const obj = JSON.parse(output); const actual = (obj.is_vuln||"").toLowerCase(); const expected = (context.vars.label||"").toLowerCase(); return actual === expected ? 1 : 0; } catch(e) { return 0; } })()'
+
+tests: file://_generated/tests_flat.yaml
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 750
+  timeoutSeconds: 60

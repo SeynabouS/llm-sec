@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LLM Cybersecurity Course Mindmap</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        'primaryColor': '#87CEEB',
+        'primaryTextColor': '#ffffff',
+        'primaryBorderColor': '#87CEEB'
+      }
+    });
+  </script>
+  <style>
+    :root {
+      --bg-color: #f5f6fa;
+      --text-color: #000000;
+      --diagram-text-color: #000000;
+    }
+    
+    body.dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #ffffff;
+    }
+    
+    body.diagram-white-text .mermaid svg text,
+    body.diagram-white-text .mermaid svg .nodeLabel,
+    body.diagram-white-text .mermaid svg .nodeLabel div {
+      fill: #ffffff !important;
+      color: #ffffff !important;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .container {
+      padding: 24px;
+    }
+    
+    .controls {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      border: 2px solid #87CEEB;
+      background: #87CEEB;
+      color: #000;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    
+    button:hover {
+      background: #5fbce8;
+      border-color: #5fbce8;
+    }
+    
+    body.dark-mode button {
+      background: #2d2d2d;
+      color: #87CEEB;
+      border-color: #87CEEB;
+    }
+    
+    body.dark-mode button:hover {
+      background: #3d3d3d;
+    }
+    
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      margin-top: 0;
+    }
+    
+    .mermaid svg g[id="root"] circle,
+    .mermaid svg g[id="root"] rect,
+    .mermaid svg g[id="root"] path {
+      fill: #87CEEB !important;
+      stroke: #87CEEB !important;
+    }
+    
+    .mermaid svg g[id="root"] text,
+    .mermaid svg g[id="root"] tspan,
+    .mermaid svg g[id="root"] .nodeLabel,
+    .mermaid svg g[id="root"] .nodeLabel div {
+      fill: #ffffff !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+    }
+    
+    .mermaid svg text,
+    .mermaid svg .nodeLabel,
+    .mermaid svg .nodeLabel div {
+      fill: #000 !important;
+      color: #000 !important;
+      font-weight: 600;
+    }
+    
+    @media print {
+      .controls {
+        display: none !important;
+      }
+      
+      body {
+        background: white;
+        color: black;
+      }
+      
+      .container {
+        padding: 0;
+      }
+      
+      @page {
+        size: landscape;
+        margin: 1cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>LLM Cybersecurity Course Mindmap</h1>
+    <p>Labs 1-4 build guardrails and evaluation loops; the final project deploys them.</p>
+    
+    <div class="controls">
+      <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+      <button onclick="toggleDiagramText()">⬛⬜ Toggle Diagram Text Color</button>
+      <button onclick="downloadPDF()">📄 Download as PDF</button>
+    </div>
+    
+    <div class="mermaid">
+mindmap
+  root((LLM Cybersecurity Course))
+    Lab1[/Lab 1 - Prompt Hardening/]
+      "Pain point: hostile prompts"
+      "Artifacts: guards, baselines, refusal metrics"
+      "Automation: make w01-day + lab1-tests.yml"
+    Lab2[/Lab 2 - Secure Code Review/]
+      "Pain point: noisy scanner output"
+      "Loop: promptfoo -> metrics.csv -> FP/FN brief"
+      "Automation: make w02-day + lab2-tests.yml"
+    Lab3[/Lab 3 - Semgrep + Checkov + LLM/]
+      "Flow: baseline vs after scans"
+      "Optional: MicroK8s validation"
+      "Automation: make w03-day + lab3-tests.yml"
+    Lab4[/Lab 4 - Guardrails & Red Team/]
+      "Dual suite: unguarded.json vs guarded.json"
+      "Metrics: refusal rate, unsafe responses, latency"
+      "Automation: make w04-day + lab4-tests.yml"
+    Project[/Final Project - Secure RAG or Safe Agent/]
+      "Track choice: RAG citations or Agent allow-listed tools"
+      "Deliverables: logs.jsonl, promptfoo reports, 3-5 page write-up"
+      "Automation: make project-test + project-tests.yml"
+    </div>
+  </div>
+  
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+    
+    function toggleDiagramText() {
+      document.body.classList.toggle('diagram-white-text');
+      localStorage.setItem('diagramWhiteText', document.body.classList.contains('diagram-white-text'));
+    }
+    
+    function downloadPDF() {
+      // Hide the controls before printing
+      const controls = document.querySelector('.controls');
+      controls.style.display = 'none';
+      
+      // Trigger print dialog (user can save as PDF)
+      window.print();
+      
+      // Show controls again after print dialog
+      setTimeout(() => {
+        controls.style.display = 'flex';
+      }, 100);
+    }
+    
+    // Restore saved preferences
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+    if (localStorage.getItem('diagramWhiteText') === 'true') {
+      document.body.classList.add('diagram-white-text');
+    }
+  </script>
+</body>
+</html>

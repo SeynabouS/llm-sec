@@ -1,0 +1,72 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files
+_generated/
+*.json
+!package.json
+!promptfooconfig*.yaml
+!results*.json
+!metrics.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node modules (if using promptfoo)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary files
+*.tmp
+*.temp
+/tmp

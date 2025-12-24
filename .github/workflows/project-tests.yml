@@ -1,0 +1,31 @@
+name: project-tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - "project/**"
+      - ".github/workflows/project-tests.yml"
+  pull_request:
+    paths:
+      - "project/**"
+      - ".github/workflows/project-tests.yml"
+
+jobs:
+  final-project-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run unit tests
+        env:
+          GEMINI_API_KEY: dummy
+          MODEL_ID: gemini-2.5-flash
+        run: |
+          PYTHONPATH=project python -m unittest discover -s project/tests
