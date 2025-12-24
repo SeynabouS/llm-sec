@@ -37,7 +37,7 @@ python -m src.app                 # runs a baseline over data/prompts_lab1.json
 5. Submit: 2‑page threat model PDF + repo with your notes and baseline results.
 
 ## 3) Deliverables
-- `reports/gandalf_notes.md` and `reports/redarena_notes.md`
+- `reports/gandalf_notes.md`
 - `reports/baseline.json` + brief summary in `README.md`
 - Threat model (2 pages) as PDF inside `reports/`
 
