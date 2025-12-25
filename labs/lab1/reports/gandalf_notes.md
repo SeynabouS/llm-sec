@@ -142,8 +142,8 @@ Resultat:
 - Autres essais: message "partially corrupted input data" (score 0)
 
 Capture:
-- `reports/screenshots/gandalf_level4_attempt.png`
+- `reports/screenshots/gandalf_level4.png`
 
-![Gandalf Level 4 Attempt](screenshots/gandalf_level4_attempt.png)
+![Gandalf Level 4 Attempt](screenshots/gandalf_level4.png)
 
 ---
