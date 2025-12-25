@@ -39,8 +39,8 @@ llm-sec/
 
 ### Lab 2: Révision de Code Sécurisé
 - **Fichiers clés:** 
-  - `labs/lab2/reports/brief.md` (Français)
-  - `labs/lab2/reports/brief_fr.md` (Français)
+  - `labs/lab2/reports/brief.md` 
+  - `labs/lab2/reports/brief_fr.md`
   - `labs/lab2/reports/metrics.csv`
 - **Résultats:** 30 tests synthétisés, amélioration 76.7% → 86.7%
 
@@ -55,7 +55,7 @@ llm-sec/
 
 ### Lab 4: Garde-fous et Red Team
 - **Fichiers clés:**
-  - `labs/lab4/reports/analysis.md` (1500+ mots)
+  - `labs/lab4/reports/analysis.md` 
   - `labs/lab4/config/policy.yaml`
   - `labs/lab4/reports/metrics_*.csv`
 - **Résultats:** 3 règles regex personnalisées, amélioration 0% → 90% taux de blocage
@@ -71,7 +71,7 @@ llm-sec/
 - **Évaluation:** `project/reports/`
   - `results_custom.json` - 16/16 tests réussis (100%)
   - `FINAL_PROJECT_REPORT_FR.md` - Rapport complet (448 lignes)
-  - `FINAL_PROJECT_REPORT.md` - Version anglaise
+  - `FINAL_PROJECT_REPORT.md` 
   - `report.html` - Dashboard interactif
   - `metrics.csv` - Métriques détaillées
 
