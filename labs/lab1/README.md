@@ -94,6 +94,4 @@ python -m unittest discover tests -v
 1. **Authentique:** Ces notes reflètent nos observations réelles de Gandalf et RedArena
 2. **Documenté:** Chaque menace est mappée sur les frameworks standards
 3. **Testé:** Tous les composants passent les tests unitaires
-4. **Prêt:** Le rapport final est prêt pour soumission
 
-**Conclusion:** Lab 1 complètement finalisé avec documentation complète des menaces LLM.
