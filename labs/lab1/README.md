@@ -91,7 +91,7 @@ python -m unittest discover tests -v
 
 ## 📝 Notes importantes
 
-1. **Authentique:** Ces notes reflètent nos observations réelles de Gandalf et RedArena
+1. **Authentique:** Ces notes reflètent nos observations réelles de Gandalf 
 2. **Documenté:** Chaque menace est mappée sur les frameworks standards
 3. **Testé:** Tous les composants passent les tests unitaires
 
