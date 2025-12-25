@@ -1,0 +1,620 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-12-24T22:09:53.418008",
+  "summary": {
+    "totalTests": 30,
+    "totalEvaluations": 60,
+    "tests": [
+      {
+        "prompt": "baseline",
+        "name": "Baseline (Naive)"
+      },
+      {
+        "prompt": "secure",
+        "name": "Secure Review"
+      }
+    ]
+  },
+  "results": [
+    {
+      "prompt": "baseline",
+      "test": 0,
+      "code": "import sqlite3\nuser = input('u: ')\nq = \"SELECT * FROM users WHERE name = '\" + user + \"'\"\nconn=sqlite...",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 0,
+      "code": "import sqlite3\nuser = input('u: ')\nq = \"SELECT * FROM users WHERE name = '\" + user + \"'\"\nconn=sqlite...",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 1,
+      "code": "import sqlite3\nuser = input('u: ')\nconn=sqlite3.connect('app.db')\nprint(conn.execute('SELECT * FROM ...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 1,
+      "code": "import sqlite3\nuser = input('u: ')\nconn=sqlite3.connect('app.db')\nprint(conn.execute('SELECT * FROM ...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 2,
+      "code": "import os\npath = input('p: ')\nos.system('ls ' + path)  # CWE-78",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-78\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 2,
+      "code": "import os\npath = input('p: ')\nos.system('ls ' + path)  # CWE-78",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-78\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 3,
+      "code": "import subprocess, shlex\npath = input('p: ')\nsubprocess.run(['ls', '--', path])",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 3,
+      "code": "import subprocess, shlex\npath = input('p: ')\nsubprocess.run(['ls', '--', path])",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 4,
+      "code": "import pickle\nraw = input('data: ')\nobj = pickle.loads(bytes.fromhex(raw))  # CWE-502",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-502\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 4,
+      "code": "import pickle\nraw = input('data: ')\nobj = pickle.loads(bytes.fromhex(raw))  # CWE-502",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-502\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 5,
+      "code": "import hashlib\npwd = input('pwd: ')\nprint(hashlib.md5(pwd.encode()).hexdigest())  # weak hash CWE-32...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 5,
+      "code": "import hashlib\npwd = input('pwd: ')\nprint(hashlib.md5(pwd.encode()).hexdigest())  # weak hash CWE-32...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 6,
+      "code": "code = input('code: ')\nprint(eval(code))  # CWE-94",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 6,
+      "code": "code = input('code: ')\nprint(eval(code))  # CWE-94",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 7,
+      "code": "code = input('code: ')\nprint('disabled')  # pretend safe path",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 7,
+      "code": "code = input('code: ')\nprint('disabled')  # pretend safe path",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 8,
+      "code": "from flask import Flask, request\napp = Flask(__name__)\n@app.route('/')\ndef i():\n  name = request.arg...",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 8,
+      "code": "from flask import Flask, request\napp = Flask(__name__)\n@app.route('/')\ndef i():\n  name = request.arg...",
+      "language": "python",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 9,
+      "code": "from flask import Flask, request\nfrom markupsafe import escape\napp = Flask(__name__)\n@app.route('/')...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 9,
+      "code": "from flask import Flask, request\nfrom markupsafe import escape\napp = Flask(__name__)\n@app.route('/')...",
+      "language": "python",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 10,
+      "code": "app.get('/u', (req,res)=>{const u=req.query.u; db.query(\"SELECT * FROM users WHERE name='\"+u+\"'\");})...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 10,
+      "code": "app.get('/u', (req,res)=>{const u=req.query.u; db.query(\"SELECT * FROM users WHERE name='\"+u+\"'\");})...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 11,
+      "code": "app.get('/u', (req,res)=>{const u=req.query.u; db.query('SELECT * FROM users WHERE name=?',[u]);});",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 11,
+      "code": "app.get('/u', (req,res)=>{const u=req.query.u; db.query('SELECT * FROM users WHERE name=?',[u]);});",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 12,
+      "code": "const {exec} = require('child_process'); app.get('/ls',(req,res)=>exec('ls '+req.query.p)); // CWE-7...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 12,
+      "code": "const {exec} = require('child_process'); app.get('/ls',(req,res)=>exec('ls '+req.query.p)); // CWE-7...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 13,
+      "code": "const {spawn} = require('child_process'); app.get('/ls',(req,res)=>spawn('ls',['--', req.query.p]));",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 13,
+      "code": "const {spawn} = require('child_process'); app.get('/ls',(req,res)=>spawn('ls',['--', req.query.p]));",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 14,
+      "code": "const yaml = require('js-yaml'); app.post('/y',(req,res)=>{yaml.load(req.body)}); // YAML load risks",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-502\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 14,
+      "code": "const yaml = require('js-yaml'); app.post('/y',(req,res)=>{yaml.load(req.body)}); // YAML load risks",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-502\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 15,
+      "code": "const crypto=require('crypto'); app.post('/h',(req,res)=>{res.send(crypto.createHash('md5').update(r...",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-327\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 15,
+      "code": "const crypto=require('crypto'); app.post('/h',(req,res)=>{res.send(crypto.createHash('md5').update(r...",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 16,
+      "code": "app.post('/e',(req,res)=>{res.send(eval(req.body.code))}); // CWE-94",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 16,
+      "code": "app.post('/e',(req,res)=>{res.send(eval(req.body.code))}); // CWE-94",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-95\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 17,
+      "code": "app.get('/',(req,res)=>res.send(`<h1>${req.query.name}</h1>`)); // CWE-79",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-79\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 17,
+      "code": "app.get('/',(req,res)=>res.send(`<h1>${req.query.name}</h1>`)); // CWE-79",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-79\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 18,
+      "code": "app.get('/f',(req,res)=>{const fs=require('fs'); const p = '../' + req.query.n; res.send(fs.readFile...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 18,
+      "code": "app.get('/f',(req,res)=>{const fs=require('fs'); const p = '../' + req.query.n; res.send(fs.readFile...",
+      "language": "javascript",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 19,
+      "code": "app.get('/f',(req,res)=>{const fs=require('fs'); const name=req.query.n; if(!/^[\\w\\-.]+$/.test(name)...",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-22\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 19,
+      "code": "app.get('/f',(req,res)=>{const fs=require('fs'); const name=req.query.n; if(!/^[\\w\\-.]+$/.test(name)...",
+      "language": "javascript",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-22\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 20,
+      "code": "String u = request.getParameter(\"u\"); Statement st = conn.createStatement(); st.execute(\"SELECT * FR...",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 20,
+      "code": "String u = request.getParameter(\"u\"); Statement st = conn.createStatement(); st.execute(\"SELECT * FR...",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-89\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 21,
+      "code": "String u = request.getParameter(\"u\"); PreparedStatement ps = conn.prepareStatement(\"SELECT * FROM us...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 21,
+      "code": "String u = request.getParameter(\"u\"); PreparedStatement ps = conn.prepareStatement(\"SELECT * FROM us...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 22,
+      "code": "String p = request.getParameter(\"p\"); Runtime.getRuntime().exec(\"ls \"+p); // CWE-78",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-78\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 22,
+      "code": "String p = request.getParameter(\"p\"); Runtime.getRuntime().exec(\"ls \"+p); // CWE-78",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-78\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 23,
+      "code": "ObjectInputStream in = new ObjectInputStream(req.getInputStream()); Object o = in.readObject(); // C...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 23,
+      "code": "ObjectInputStream in = new ObjectInputStream(req.getInputStream()); Object o = in.readObject(); // C...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 24,
+      "code": "MessageDigest md = MessageDigest.getInstance(\"MD5\"); md.digest(pwd.getBytes()); // CWE-327",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-327\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 24,
+      "code": "MessageDigest md = MessageDigest.getInstance(\"MD5\"); md.digest(pwd.getBytes()); // CWE-327",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-327\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 25,
+      "code": "DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); DocumentBuilder db = dbf.newDocum...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 25,
+      "code": "DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); DocumentBuilder db = dbf.newDocum...",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 26,
+      "code": "DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); dbf.setFeature(\"http://apache.org...",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-611\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 26,
+      "code": "DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); dbf.setFeature(\"http://apache.org...",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"yes\", \"cwe\": \"CWE-611\", \"title\": \"Code is vulnerable\", \"rationale\": \"This code snippet contains security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 27,
+      "code": "out.println(\"<h1>\"+request.getParameter(\"name\")+\"</h1>\"); // CWE-79",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 27,
+      "code": "out.println(\"<h1>\"+request.getParameter(\"name\")+\"</h1>\"); // CWE-79",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 28,
+      "code": "String n = request.getParameter(\"n\"); Files.readString(Paths.get(\"..\", n)); // CWE-22",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "secure",
+      "test": 28,
+      "code": "String n = request.getParameter(\"n\"); Files.readString(Paths.get(\"..\", n)); // CWE-22",
+      "language": "java",
+      "expected": "yes",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": false,
+      "score": 0.0
+    },
+    {
+      "prompt": "baseline",
+      "test": 29,
+      "code": "System.out.println(\"Hello\");",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    },
+    {
+      "prompt": "secure",
+      "test": 29,
+      "code": "System.out.println(\"Hello\");",
+      "language": "java",
+      "expected": "no",
+      "output": "{\"is_vuln\": \"no\", \"cwe\": null, \"title\": \"Code is not vulnerable\", \"rationale\": \"This code snippet does not contain security vulnerabilities.\"}",
+      "pass": true,
+      "score": 1.0
+    }
+  ]
+}
