@@ -10,7 +10,7 @@
 
 Ce lab nous a permis d'identifier et documenter les menaces contre les systèmes LLM. Voici nos travaux:
 
-✅ **Analyse des attaques Gandalf & RedArena**
+✅ **Analyse des attaques Gandalf
 - Joué à Gandalf pour comprendre les patterns de jailbreak
 - Documenté 400+ lignes d'analyse des techniques d'attaque
 
